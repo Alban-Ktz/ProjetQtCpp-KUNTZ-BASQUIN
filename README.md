@@ -23,7 +23,7 @@ Description
 
 `constructeur` -> dossier contenant elementch1 qui est le constructeur des éléments des structures <br>
 `lancerApplication` -> dossier contenant le Main qui permettra de lancer l'application <br>
-`Arbre`, `File`, `Liste`, `Pile` -> Contient les différentes structures de données
+`File`, `Liste`, `Pile` -> Contient les différentes structures de données
 
  <br/>
 
