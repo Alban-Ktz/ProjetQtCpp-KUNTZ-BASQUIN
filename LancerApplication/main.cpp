@@ -13,25 +13,25 @@ int main()
     cin >> answer;
 
     if(answer == 1) {
-    #include "../Liste/Suitech1.cpp"
+    #include "../Liste/Liste.cpp"
     
-    SuiteCh1 ch1;
+    Liste liste;
 
 
-    ch1.AjoutEnTete(14);
-    ch1.AjoutEnTete(27);
-    ch1.AjoutEnQueue(571);
-    ch1.AjoutEnQueue(851);
-    ch1.AjoutEnTete(54);
-    // ch1.SupprimerEnTete();
-    // ch1.SupprimerEnQueue();
+    liste.AjoutEnTete(14);
+    liste.AjoutEnTete(27);
+    liste.AjoutEnQueue(571);
+    liste.AjoutEnQueue(851);
+    liste.AjoutEnTete(54);
+    // liste.SupprimerEnTete();
+    // liste.SupprimerEnQueue();
 
-    ch1.afficherSuite();
+    liste.afficherListe();
 
     } else if(answer == 2) {
-    #include "../Pile/Suitech1.cpp"
+    #include "../Pile/Pile.cpp"
 
-    pile pile;
+    Pile pile;
 
     
     pile.Empiler(5);
@@ -40,12 +40,20 @@ int main()
 
     pile.Depiler();
 
-    pile.AfficherPile();
+    pile.afficherPile();
 
     } else if(answer == 3) {
-        
-    } else if(answer == 4) {
-        
-    }
+    #include "../File/File.cpp"
+
+    File file;
+
+    file.AjoutEnTete(14);
+    file.AjoutEnTete(15);
+    file.AjoutEnTete(47);
+    file.AjoutEnTete(2);
+    //file.SupprimerEnQueue();
+
+    file.afficherFile();     
+    } 
 
 }

@@ -2,19 +2,19 @@
 #include "../Constructeur/ElementCh1.cpp"
 using namespace std;
 
-class SuiteCh1
+class Liste
 {
 
 private:
     Elch1 *pPremier;
 
 public:
-    SuiteCh1()
+    Liste()
     {
         pPremier = nullptr;
     }
 
-    SuiteCh1(Elch1 *var)
+    Liste(Elch1 *var)
     {
         pPremier = var;
     }
@@ -57,14 +57,19 @@ public:
         free(temp);
     }
 
-    void afficherSuite()
+    void afficherListe()
     {
         Elch1 *current = this->pPremier;
         cout << endl;
+        if(current == NULL) {
+            cout << "La liste est vide";
+        }
         while (current != NULL)
         {
             current->afficherElch();
             current = current->GetSuivant();
         }
+
+        free(&current);
     }
 };

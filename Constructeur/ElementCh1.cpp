@@ -42,6 +42,6 @@ public:
 
     void afficherElch()
     {
-        cout << "Value : " << donnee << " | address : " << suivant << endl; 
+        cout << "[" << donnee << "|" << suivant << "]" << endl; 
     }
 };
