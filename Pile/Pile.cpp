@@ -2,14 +2,13 @@
 #include "../Constructeur/ElementCh1.cpp"
 using namespace std;
 
-
 class Pile
 {
+
 private:
     Elch1 *pPremier;
 
 public:
-
     Pile(Elch1 *pPremier)
     {
         this->pPremier = pPremier;
@@ -34,12 +33,12 @@ public:
         this->pPremier = temp;
     }
 
-
     void afficherPile()
     {
         Elch1 *current = this->pPremier;
         cout << endl;
-        if(current == NULL) {
+        if (current == NULL)
+        {
             cout << "La pile est vide";
         }
         while (current != NULL)
@@ -50,5 +49,4 @@ public:
 
         free(&current);
     }
-
 };

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../Pile/Pile.cpp"
 
 using namespace std;
 
@@ -6,6 +7,7 @@ int main()
 {
 
     int answer;
+    Pile testPile;
 
     cout << "Veuillez choisir votre type de structure de donnees" << endl;
     cout << "-------------------------------------------------------------------------------" << endl;
@@ -98,8 +100,8 @@ int main()
         {
             cout << "Veuillez renseigner la valeur a empiler :" << endl;
             cin >> element;
-            pile.Empiler(element);
-            pile.afficherPile();
+            testPile.Empiler(element);
+            testPile.afficherPile();
         }
         else if (operation == 2)
         {
