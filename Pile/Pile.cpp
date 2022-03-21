@@ -29,9 +29,11 @@ public:
 
     void Depiler()
     {
-        Elch1 *temp = new Elch1(*(this->pPremier->GetSuivant()));
-        free(pPremier);
-        this->pPremier = temp;
+        if (pPremier == NULL) {
+            cout << "Erreur - Impossible de depiler, la pile est deja vide !" << endl;
+        } else {
+            pPremier = pPremier->GetSuivant();
+        }   
     }
 
 
