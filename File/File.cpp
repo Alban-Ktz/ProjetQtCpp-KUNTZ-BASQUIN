@@ -2,8 +2,9 @@
 #include "../Constructeur/ElementCh1.cpp"
 using namespace std;
 
-class File {
-    
+class File
+{
+
 private:
     Elch1 *pPremier;
 
@@ -25,13 +26,14 @@ public:
         this->pPremier = chaine1;
     }
 
-    void SupprimerEnQueue() {
-        Elch1* temp = this->pPremier;
-            while (temp->GetSuivant() != NULL)
-            {
-                temp = temp->GetSuivant();
-            }
-        
+    void SupprimerEnQueue()
+    {
+        Elch1 *temp = this->pPremier;
+        while (temp->GetSuivant() != NULL)
+        {
+            temp = temp->GetSuivant();
+        }
+
         free(temp);
     }
 
@@ -39,7 +41,8 @@ public:
     {
         Elch1 *current = this->pPremier;
         cout << endl;
-        if(current == NULL) {
+        if (current == NULL)
+        {
             cout << "La File est vide";
         }
         while (current != NULL)
@@ -49,7 +52,5 @@ public:
         }
 
         free(&current);
-
     }
-
 };

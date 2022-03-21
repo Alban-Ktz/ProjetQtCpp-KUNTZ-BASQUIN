@@ -5,7 +5,7 @@ class Elch1
 {
 private:
     double donnee;
-    Elch1* suivant;
+    Elch1 *suivant;
 
 public:
     Elch1(double donnee, Elch1 *suivant)
@@ -42,6 +42,6 @@ public:
 
     void afficherElch()
     {
-        cout << "[" << donnee << "|" << suivant << "]" << endl; 
+        cout << "[" << donnee << "|" << suivant << "]" << endl;
     }
 };

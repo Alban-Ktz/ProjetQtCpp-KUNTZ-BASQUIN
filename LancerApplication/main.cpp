@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 using namespace std;
 
 int main()
@@ -9,51 +8,166 @@ int main()
     int answer;
 
     cout << "Veuillez choisir votre type de structure de donnees" << endl;
-    cout << "1 - Liste" << endl << "2 - Pile" << endl << "3 - File" << endl << "4 - Arbre"<< endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
+    cout << "1 - Liste" << endl
+         << "2 - Pile" << endl
+         << "3 - File" << endl;
+    cout << "-------------------------------------------------------------------------------" << endl;
     cin >> answer;
 
-    if(answer == 1) {
-    #include "../Liste/Liste.cpp"
-    
-    Liste liste;
+    if (answer == 1)
+    {
+#include "../Liste/Liste.cpp"
+        int operation;
 
+        cout << "Vous avez choisi les listes, veuillez choisir votre operation" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
+        cout << "1 - Ajout en tete" << endl
+             << "2 - Ajout en queue" << endl
+             << "3 - Supprimer en tete" << endl
+             << "4 - Supprimer en queue" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
+        cin >> operation;
 
-    liste.AjoutEnTete(14);
-    liste.AjoutEnTete(27);
-    liste.AjoutEnQueue(571);
-    liste.AjoutEnQueue(851);
-    liste.AjoutEnTete(54);
-    // liste.SupprimerEnTete();
-    // liste.SupprimerEnQueue();
+        Liste liste;
+        double element;
+        int continuer;
 
-    liste.afficherListe();
+        if (operation == 1)
+        {
+            cout << "Veuillez renseigner la valeur a ajouter en tete :" << endl;
+            cin >> element;
+            liste.AjoutEnTete(element);
+            liste.afficherListe();
+        }
+        else if (operation == 2)
+        {
+            cout << "Veuillez renseigner la valeur a ajouter en queue :" << endl;
+            cin >> element;
+            liste.AjoutEnQueue(element);
+            liste.afficherListe();
+        }
+        else if (operation == 3)
+        {
+            cout << "Suppression de l'element" << endl;
+            liste.SupprimerEnTete();
+            liste.afficherListe();
+        }
+        else if (operation == 4)
+        {
+            cout << "Suppression de l'element" << endl;
+            liste.SupprimerEnQueue();
+            liste.afficherListe();
+        }
 
-    } else if(answer == 2) {
-    #include "../Pile/Pile.cpp"
+        cout << "Voulez-vous refaire une operation ?" << endl;
+        cout << "------------------------------------------------------------" << endl;
+        cout << "1 - Oui" << endl;
+        cout << "2 - Non" << endl;
+        cout << "------------------------------------------------------------" << endl;
 
-    Pile pile;
+        cin >> continuer;
 
-    
-    pile.Empiler(5);
-    pile.Empiler(7);
-    pile.Empiler(89);
+        switch (continuer)
+        {
+        case 1:
+            main();
+            break;
+        case 2:
+            break;
+        }
+    }
+    else if (answer == 2)
+    {
+#include "../Pile/Pile.cpp"
 
-    pile.Depiler();
+        int operation;
 
-    pile.afficherPile();
+        cout << "Vous avez choisi les piles, veuillez choisir votre operation" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
+        cout << "1 - Empiler" << endl;
+        cout << "2 - Depiler" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
+        cin >> operation;
 
-    } else if(answer == 3) {
-    #include "../File/File.cpp"
+        Pile pile;
+        double element;
+        int continuer;
 
-    File file;
+        if (operation == 1)
+        {
+            cout << "Veuillez renseigner la valeur a empiler :" << endl;
+            cin >> element;
+            pile.Empiler(element);
+            pile.afficherPile();
+        }
+        else if (operation == 2)
+        {
+            pile.Depiler();
+            pile.afficherPile();
+        }
 
-    file.AjoutEnTete(14);
-    file.AjoutEnTete(15);
-    file.AjoutEnTete(47);
-    file.AjoutEnTete(2);
-    //file.SupprimerEnQueue();
+        cout << "Voulez-vous refaire une operation ?" << endl;
+        cout << "------------------------------------------------------------" << endl;
+        cout << "1 - Oui" << endl;
+        cout << "2 - Non" << endl;
+        cout << "------------------------------------------------------------" << endl;
 
-    file.afficherFile();     
-    } 
+        cin >> continuer;
 
+        switch (continuer)
+        {
+        case 1:
+            main();
+            break;
+        case 2:
+            break;
+        }
+    }
+    else if (answer == 3)
+    {
+#include "../File/File.cpp"
+        int operation;
+
+        cout << "Vous avez choisi les files, veuillez choisir votre operation" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
+        cout << "1 - Ajout en tete" << endl;
+        cout << "2 - Supprimer en queue" << endl;
+        cout << "-------------------------------------------------------------------------------" << endl;
+        cin >> operation;
+
+        File file;
+        double element;
+        int continuer;
+
+        if (operation == 1)
+        {
+            cout << "Veuillez renseigner la valeur a ajouter en tete :" << endl;
+            cin >> element;
+            file.AjoutEnTete(element);
+            file.afficherFile();
+        }
+        else if (operation == 2)
+        {
+            file.SupprimerEnQueue();
+            file.afficherFile();
+        }
+
+        cout << "Voulez-vous refaire une operation ?" << endl;
+        cout << "------------------------------------------------------------" << endl;
+        cout << "1 - Oui" << endl;
+        cout << "2 - Non" << endl;
+        cout << "------------------------------------------------------------" << endl;
+
+        cin >> continuer;
+
+        switch (continuer)
+        {
+        case 1:
+            main();
+            break;
+        case 2:
+            break;
+        }
+    }
 }
