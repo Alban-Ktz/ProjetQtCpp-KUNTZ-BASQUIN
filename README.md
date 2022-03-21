@@ -18,6 +18,14 @@ Description
 
  <br/>
  
+ Répartition du travail
+------------------------
+ 
+ Kuntz Alban : *50%* <br/>
+ Basquin Thomas : *50%*
+ 
+ <br/>
+ 
  Répertoire du projet
 ------------------------
 
