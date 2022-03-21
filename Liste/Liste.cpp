@@ -27,9 +27,11 @@ public:
 
     void SupprimerEnTete(){
 
-        Elch1 *chaine1 = pPremier->GetSuivant();
-        free(pPremier);
-        pPremier = chaine1;
+        if (pPremier == NULL) {
+            cout << "Erreur - Impossible de supprimer en tête, la liste est deja vide !" << endl;
+        } else {
+            pPremier = pPremier->GetSuivant();
+        }   
 
     }
 
@@ -49,12 +51,16 @@ public:
 
     void SupprimerEnQueue() {
         Elch1* temp = this->pPremier;
-        while (temp->GetSuivant() != NULL)
-        {
-            temp = temp->GetSuivant();
+        if( temp == NULL ){
+            cout << "Erreur - Impossible de supprimer en tête, la liste est deja vide !" << endl;
+        } else if(temp->GetSuivant() == nullptr) {
+            pPremier=NULL;
+        } else {
+            while (temp->GetSuivant()->GetSuivant() != NULL) {
+                temp = temp->GetSuivant();
+            }
+            temp->SetSuivant(nullptr);
         }
-        
-        free(temp);
     }
 
     void afficherListe()

@@ -28,13 +28,11 @@ public:
 
     void SupprimerEnQueue()
     {
-        Elch1 *temp = this->pPremier;
-        while (temp->GetSuivant() != NULL)
-        {
-            temp = temp->GetSuivant();
-        }
-
-        free(temp);
+        if (pPremier == NULL) {
+            cout << "Erreur - Impossible de defiler, la file est deja vide !" << endl;
+        } else {
+            pPremier = pPremier->GetSuivant();
+        }   
     }
 
     void afficherFile()
